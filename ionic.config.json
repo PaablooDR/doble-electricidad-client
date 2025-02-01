@@ -1,0 +1,7 @@
+{
+  "name": "doble-electricidad-client",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
