@@ -1,0 +1,21 @@
+<ion-modal [isOpen]="isOpen" (willDismiss)="closeModal()">
+  <ng-template>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Invoice Details</ion-title>
+        <ion-buttons slot="end">
+          <ion-button slot="end" (click)="closeModal()">Close</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <div>
+        <p>Holder Name: {{ invoice?.holder_name }}</p>
+        <p>Date: {{ invoice?.date | date }}</p>
+        <p>Amount: {{ invoice?.amount | currency }}</p>
+        <p>Address: {{ invoice?.address }}</p>
+        <p>User: {{ invoice?.user }}</p>
+      </div>
+    </ion-content>
+  </ng-template>
+</ion-modal>
