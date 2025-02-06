@@ -1,0 +1,24 @@
+{
+  "LOGIN": {
+      "TITLE": "Iniciar sesión",
+      "EMAIL": "Email",
+      "EMAIL-LABEL": "Por ej. ejemplo@email.com",
+      "PASSWORD": "Contraseña",
+      "PASSWORD-LABEL": "Tu contraseña",
+      "ACCEPT": "Aceptar"
+  },
+  "LIST": {
+      "TITLE": "Facturas"
+  },
+  "PROFILE": {
+      "TITLE": "Perfil",
+      "NAME": "Nombre",
+      "ADDRESS": "Dirección",
+      "EDIT": "Editar",
+      "SAVE": "Guardar",
+      "CANCEL": "Cancelar"
+  },
+  "HEADER": {
+      "LOGOUT": "Cerrar sesión"
+  }
+}

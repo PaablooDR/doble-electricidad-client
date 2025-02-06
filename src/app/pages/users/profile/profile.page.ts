@@ -5,20 +5,21 @@ import { IonContent, IonHeader, IonTitle, IonToolbar, IonInput, IonItem, IonButt
 import { addIcons } from 'ionicons';
 import { create } from 'ionicons/icons';
 import { UserService } from 'src/app/services/users/user.service';
+import { TranslateService, TranslateModule  } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.page.html',
   styleUrls: ['./profile.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, IonInput, IonItem, IonButtons, IonButton, IonBackButton, IonIcon, CommonModule, FormsModule, ReactiveFormsModule]
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, IonInput, IonItem, IonButtons, IonButton, IonBackButton, IonIcon, CommonModule, FormsModule, ReactiveFormsModule, TranslateModule]
 })
 export class ProfilePage implements OnInit {
   user: any = {};
   formUser: FormGroup;
   isEditing = false;
 
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService, private translate: TranslateService) {
     addIcons({ create });
 
     this.formUser = new FormGroup({

@@ -1,0 +1,24 @@
+{
+    "LOGIN": {
+        "TITLE": "Login",
+        "EMAIL": "Email",
+        "EMAIL-LABEL": "For ex. example@email.com",
+        "PASSWORD": "Password",
+        "PASSWORD-LABEL": "Your password",
+        "ACCEPT": "Accept"
+    },
+    "LIST": {
+        "TITLE": "Invoices"
+    },
+    "PROFILE": {
+        "TITLE": "Profile",
+        "NAME": "Email",
+        "ADDRESS": "Address",
+        "EDIT": "Edit",
+        "SAVE": "Save",
+        "CANCEL": "Cancel"
+    },
+    "HEADER": {
+        "LOGOUT": "Log out"
+    }
+}

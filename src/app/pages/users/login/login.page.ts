@@ -4,18 +4,19 @@ import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, 
 import { Router } from '@angular/router';
 import { IonContent, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonInput, IonItem, IonButton,} from '@ionic/angular/standalone';
 import { UserService } from 'src/app/services/users/user.service';
+import { TranslateService, TranslateModule  } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
   standalone: true,
-  imports: [IonContent, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonInput, IonItem, IonButton, CommonModule, FormsModule, ReactiveFormsModule]
+  imports: [IonContent, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonInput, IonItem, IonButton, CommonModule, FormsModule, ReactiveFormsModule, TranslateModule ]
 })
 export class LoginPage implements OnInit {
   formLogin: FormGroup;
 
-  constructor(private userService: UserService, private router: Router) {
+  constructor(private userService: UserService, private router: Router, private translate: TranslateService) {
     this.formLogin = new FormGroup({
       email: new FormControl(null, [
         Validators.required,

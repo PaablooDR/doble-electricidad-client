@@ -5,7 +5,7 @@
     <ion-buttons slot="start">
       <ion-back-button default-href="/list" />
     </ion-buttons>
-    <ion-title>Profile</ion-title>
+    <ion-title>{{ 'PROFILE.TITLE' | translate }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -14,34 +14,34 @@
   <form [formGroup]="formUser" (ngSubmit)="onSubmit()">
     <!-- Form inputs only enable when the user is editing -->
     <ion-item>
-      <ion-input label="Name" type="text" formControlName="name" [readonly]="!isEditing" />
+      <ion-input [label]="'PROFILE.NAME' | translate" type="text" formControlName="name" [readonly]="!isEditing" />
     </ion-item>
     <ion-item>
-      <ion-input label="Email" type="email" formControlName="email" [readonly]="!isEditing" />
+      <ion-input [label]="'LOGIN.EMAIL' | translate" type="email" formControlName="email" [readonly]="!isEditing" />
     </ion-item>
     <ion-item>
-      <ion-input label="Address" type="text" formControlName="address" [readonly]="!isEditing" />
+      <ion-input [label]="'PROFILE.ADDRESS' | translate" type="text" formControlName="address" [readonly]="!isEditing" />
     </ion-item>
     <ion-item *ngIf="isEditing">
-      <ion-input label="Password" type="password" formControlName="password" />
+      <ion-input [label]="'LOGIN.PASSWORD' | translate" type="password" formControlName="password" />
     </ion-item>
 
     <!-- Save and Cancel buttons -->
     <ion-buttons class="center-item">
       <!-- Submit the edit form -->
       <ion-button *ngIf="isEditing" color="success" type="submit" [disabled]="!formUser.valid" fill="solid">
-        Save
+        {{ 'PROFILE.SAVE' | translate }}
       </ion-button>
       <!-- Cancel the edit form -->
       <ion-button *ngIf="isEditing" color="danger" (click)="toggleEdit()" fill="solid">
-        Cancel
+        {{ 'PROFILE.CANCEL' | translate }}
       </ion-button>
     </ion-buttons>
 
     <!-- Button that initializes the edit -->
     <div class="center-item">
       <ion-button *ngIf="!isEditing" color="tertiary" (click)="toggleEdit()">
-        Edit
+        {{ 'PROFILE.EDIT' | translate }}
         <ion-icon slot="end" name="create" />
       </ion-button>
     </div>

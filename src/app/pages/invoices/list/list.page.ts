@@ -7,19 +7,20 @@ import { newspaper, person } from 'ionicons/icons';
 import { InvoiceService } from 'src/app/services/invoices/invoice.service';
 import { HeaderComponent } from 'src/app/components/header/header.component';
 import generatePDF from 'src/app/lib/pdf';
+import { TranslateService, TranslateModule  } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-list',
   templateUrl: './list.page.html',
   styleUrls: ['./list.page.scss'],
   standalone: true,
-  imports: [IonContent, IonItem, IonLabel, IonList, IonButton, IonIcon, IonTitle, CommonModule, FormsModule, HeaderComponent]
+  imports: [IonContent, IonItem, IonLabel, IonList, IonButton, IonIcon, IonTitle, CommonModule, FormsModule, HeaderComponent, TranslateModule]
 })
 export class ListPage implements OnInit {
 
   invoices: any[] = [];
 
-  constructor(private invoiceService: InvoiceService) {
+  constructor(private invoiceService: InvoiceService, private translate: TranslateService) {
     addIcons({ newspaper, person });
   }
 
