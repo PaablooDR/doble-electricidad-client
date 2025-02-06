@@ -7,7 +7,7 @@
   <!-- List all the invoices from the database -->
   <ion-list [inset]="true">
     <!-- Item of every invoice -->
-    <ion-item *ngFor="let invoice of invoices">
+    <ion-item class="margin-list" *ngFor="let invoice of invoices">
       <ion-label>{{ invoice.holder_name }}</ion-label>
       <!-- Button that generate a PDF of the invoice -->
       <ion-button (click)="onGeneratePDF(invoice)">

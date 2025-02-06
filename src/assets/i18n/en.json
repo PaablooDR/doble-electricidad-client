@@ -15,10 +15,12 @@
         "NAME": "Email",
         "ADDRESS": "Address",
         "EDIT": "Edit",
+        "NEWPASSWORD": "New password",
         "SAVE": "Save",
         "CANCEL": "Cancel"
     },
     "HEADER": {
+        "TITLE": "Doble Electricidad",
         "LOGOUT": "Log out"
     }
 }

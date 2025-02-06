@@ -8,7 +8,7 @@
       </ion-card-header>
       <!-- Card content -->
       <ion-card-content class="height-75">
-        <form [formGroup]="formLogin" (ngSubmit)="onSubmit($event)" class="login-form">
+        <form class="login-form" [formGroup]="formLogin" (ngSubmit)="onSubmit($event)">
           <ion-item>
             <ion-input [label]="'LOGIN.EMAIL' | translate" type="email" [placeholder]="'LOGIN.EMAIL-LABEL' | translate" formControlName="email" />
             <!-- <ion-note slot="error">Email is required</ion-note> -->

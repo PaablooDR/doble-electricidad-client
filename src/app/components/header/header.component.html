@@ -1,7 +1,18 @@
 <ion-header>
   <ion-toolbar color="primary">
+    <!-- Title -->
     <ion-title>Doble Electricidad</ion-title>
+    <!-- Header buttons -->
     <ion-buttons slot="end">
+      <!-- Language select buttons -->
+      <ion-button [disabled]="currentLanguage === 'en'" (click)="changeLanguage('en')" size="large">
+        EN
+      </ion-button>
+      |
+      <ion-button [disabled]="currentLanguage === 'es'" (click)="changeLanguage('es')" size="large">
+        ES
+      </ion-button>
+      <!-- Popover button -->
       <ion-button (click)="openPopover($event)" size="large">
         <ion-icon name="person" />
       </ion-button>
@@ -13,10 +24,12 @@
 <ion-popover [isOpen]="isPopoverOpen" [event]="popoverEvent" (didDismiss)="handlePopoverDismiss()">
   <ng-template>
     <ion-content class="ion-padding">
+        <!-- Button that redirects to profile -->
         <ion-button (click)="onEditProfile()" expand="block" fill="clear">
           {{ 'PROFILE.EDIT' | translate }}
           <ion-icon slot="start" name="create" />
         </ion-button>
+        <!-- Button that log out user and redirects to login -->
         <ion-button (click)="onLogout()" expand="block" color="danger" fill="clear">
           {{ 'HEADER.LOGOUT' | translate }}
           <ion-icon slot="start" name="exit" />

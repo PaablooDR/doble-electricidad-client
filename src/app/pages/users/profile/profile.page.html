@@ -11,39 +11,41 @@
 
 <!-- Content -->
 <ion-content [fullscreen]="true">
-  <form [formGroup]="formUser" (ngSubmit)="onSubmit()">
-    <!-- Form inputs only enable when the user is editing -->
-    <ion-item>
-      <ion-input [label]="'PROFILE.NAME' | translate" type="text" formControlName="name" [readonly]="!isEditing" />
-    </ion-item>
-    <ion-item>
-      <ion-input [label]="'LOGIN.EMAIL' | translate" type="email" formControlName="email" [readonly]="!isEditing" />
-    </ion-item>
-    <ion-item>
-      <ion-input [label]="'PROFILE.ADDRESS' | translate" type="text" formControlName="address" [readonly]="!isEditing" />
-    </ion-item>
-    <ion-item *ngIf="isEditing">
-      <ion-input [label]="'LOGIN.PASSWORD' | translate" type="password" formControlName="password" />
-    </ion-item>
+  <div class="center-item height-100">
+    <form class="width-75 login-form" [formGroup]="formUser" (ngSubmit)="onSubmit()">
+      <!-- Form inputs only enable when the user is editing -->
+      <ion-item>
+        <ion-input [label]="'PROFILE.NAME' | translate" type="text" formControlName="name" [readonly]="!isEditing" />
+      </ion-item>
+      <ion-item>
+        <ion-input [label]="'LOGIN.EMAIL' | translate" type="email" formControlName="email" [readonly]="!isEditing" />
+      </ion-item>
+      <ion-item>
+        <ion-input [label]="'PROFILE.ADDRESS' | translate" type="text" formControlName="address" [readonly]="!isEditing" />
+      </ion-item>
+      <ion-item *ngIf="isEditing">
+        <ion-input [label]="'PROFILE.NEWPASSWORD' | translate" type="password" formControlName="password" />
+      </ion-item>
 
-    <!-- Save and Cancel buttons -->
-    <ion-buttons class="center-item">
-      <!-- Submit the edit form -->
-      <ion-button *ngIf="isEditing" color="success" type="submit" [disabled]="!formUser.valid" fill="solid">
-        {{ 'PROFILE.SAVE' | translate }}
-      </ion-button>
-      <!-- Cancel the edit form -->
-      <ion-button *ngIf="isEditing" color="danger" (click)="toggleEdit()" fill="solid">
-        {{ 'PROFILE.CANCEL' | translate }}
-      </ion-button>
-    </ion-buttons>
+      <!-- Save and Cancel buttons -->
+      <ion-buttons class="center-item">
+        <!-- Submit the edit form -->
+        <ion-button *ngIf="isEditing" color="success" type="submit" [disabled]="!formUser.valid" fill="solid">
+          {{ 'PROFILE.SAVE' | translate }}
+        </ion-button>
+        <!-- Cancel the edit form -->
+        <ion-button *ngIf="isEditing" color="danger" (click)="toggleEdit()" fill="solid">
+          {{ 'PROFILE.CANCEL' | translate }}
+        </ion-button>
+      </ion-buttons>
 
-    <!-- Button that initializes the edit -->
-    <div class="center-item">
-      <ion-button *ngIf="!isEditing" color="tertiary" (click)="toggleEdit()">
-        {{ 'PROFILE.EDIT' | translate }}
-        <ion-icon slot="end" name="create" />
-      </ion-button>
-    </div>
-  </form>
+      <!-- Button that initializes the edit -->
+      <div class="center-item">
+        <ion-button *ngIf="!isEditing" color="tertiary" (click)="toggleEdit()">
+          {{ 'PROFILE.EDIT' | translate }}
+          <ion-icon slot="end" name="create" />
+        </ion-button>
+      </div>
+    </form>
+  </div>
 </ion-content>

@@ -15,10 +15,12 @@
       "NAME": "Nombre",
       "ADDRESS": "Dirección",
       "EDIT": "Editar",
+      "NEWPASSWORD": "Nueva contraseña",
       "SAVE": "Guardar",
       "CANCEL": "Cancelar"
   },
   "HEADER": {
-      "LOGOUT": "Cerrar sesión"
+    "TITLE": "Doble Electricidad",
+    "LOGOUT": "Cerrar sesión"
   }
 }
