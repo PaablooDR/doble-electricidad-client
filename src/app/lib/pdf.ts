@@ -4,86 +4,58 @@ import { variable64 } from "../../assets/img-pdf";
 
 (pdfMake as any).vfs = pdfFonts.pdfMake.vfs;
 
-type Product = {
-  nombre: string;
-  cantidad: number;
-  total: number;
-};
-
-const generatePDF = (
-  products: Product[],
-  reciboNo: string,
-  fecha: string
-) => {
-
-  const tableBody = [
-    [
-      { text: "Nombre producto", style: "tableHeader" },
-      { text: "Cantidad", style: "tableHeader" },
-      { text: "Total", style: "tableHeader" },
-    ],
-    ...products.map((product) => [
-      product.nombre,
-      product.cantidad.toString(),
-      `$ ${product.total}`,
-    ]),
-  ];
-
-
-  const totalGeneral = products.reduce((sum, product) => sum + product.total, 0);
-
-
+const generatePDF = (reciboNo: string, fecha: string, holderName: string, amount: number, address: string) => {
+  
   const content: any[] = [];
 
-
   content.push({
     columns: [
-      { image: variable64.miVar, width: 50 },
+      { image: variable64.miVar, width: 150 },
       {
-        stack: [
-          { text: `Recibo No. ${reciboNo}`, style: "header" },
-          { text: `Fecha: ${fecha}`, style: "subheader" },
-        ],
+        qr: `https://doble-electricidad.com/invoice/${reciboNo}`,
+        fit: 100,
         alignment: "right",
       },
     ],
   });
 
+  // content.push({
+  //   qr: `https://doble-electricidad.com/invoice/${reciboNo}`,
+  //   fit: 100,
+  //   alignment: "right",
+  //   margin: [0, 10, 0, 10],
+  // });
 
   content.push({
-    qr: 'https://github.com/PaablooDR',
-    fit: 100,
+    canvas: [
+      {
+        type: "line",
+        x1: 0,
+        y1: 0,
+        x2: 525,
+        y2: 0,
+        lineWidth: 1,
+        lineColor: "#3052A1", // Azul
+      },
+    ],
+    margin: [0, 10, 0, 10],
+  });
+
+  content.push({
+    text: `Titular: ${holderName}`,
+    style: "info",
+  });
+
+  content.push({
+    text: `Dirección: ${address}`,
+    style: "info",
+  });
+
+  content.push({
+    text: `Monto total: $${amount}`,
+    style: "total",
     alignment: "right",
-    margin: [0, 10, 0, 10],
   });
-
-
-  content.push({ text: "\n" });
-
-
-  content.push({
-    table: {
-      headerRows: 1,
-      widths: ["*", "*", "*"],
-      body: tableBody,
-    },
-    layout: "lightHorizontalLines",
-    margin: [0, 10, 0, 10],
-  });
-
-
-  content.push({
-    columns: [
-      { text: "", width: "*" },
-      {
-        text: `Total: $ ${totalGeneral}`,
-        style: "total",
-        alignment: "right",
-        margin: [0, 10, 0, 10],
-      },
-    ],
-  });
-
 
   const styles = {
     header: {
@@ -94,17 +66,16 @@ const generatePDF = (
       fontSize: 12,
       margin: [0, 5, 0, 5],
     },
-    tableHeader: {
-      bold: true,
+    info: {
       fontSize: 12,
-      color: "black",
+      margin: [0, 5, 0, 5],
     },
     total: {
-      fontSize: 12,
+      fontSize: 14,
       bold: true,
+      margin: [0, 10, 0, 10],
     },
   };
-
 
   const docDefinition: any = {
     content,

@@ -1,0 +1,25 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>Doble Electricidad</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="openPopover($event)">
+        <ion-icon name="person"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<!-- Popover -->
+<ion-popover [isOpen]="isPopoverOpen" [event]="popoverEvent" (didDismiss)="handlePopoverDismiss()">
+  <ng-template>
+    <ion-content class="ion-padding">
+        <ion-item button (click)="onEditProfile()">
+          <ion-label>Edit</ion-label>
+        </ion-item>
+        <ion-button (click)="onLogout()" expand="block" color="danger">
+          Log out
+          <ion-icon slot="start" name="exit"></ion-icon>
+        </ion-button>
+    </ion-content>
+  </ng-template>
+</ion-popover>

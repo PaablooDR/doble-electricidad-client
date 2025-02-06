@@ -13,6 +13,10 @@ export class UserService {
     return this.http.get<any[]>(`${this.baseUrl}`);
   }
 
+  getUser(): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}/user`, this.createHeaders());
+  }
+
   loginUser(userData: { email: string; password: string }): Observable<any> {
     return this.http.post<any>(`${this.baseUrl}/login`, userData);
   }
@@ -29,7 +33,7 @@ export class UserService {
     return localStorage.getItem('token_doble_electricidad') ? true : false;
   }
 
-  // getUserId(email: string): Observable<any> {
-  //   return this.http.get<any>(`${this.baseUrl}/userId/?email=${email}`);
-  // }
+  editUser(userData: { name: string, email: string, password: string, address: string }) {
+    return this.http.put<any>(`${this.baseUrl}/edit`, userData, this.createHeaders());
+  }
 }

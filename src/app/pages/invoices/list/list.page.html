@@ -1,18 +1,17 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Inovoices</ion-title>
-  </ion-toolbar>
-</ion-header>
+<!-- Header -->
+<app-header></app-header>
 
+<!-- Content -->
 <ion-content [fullscreen]="true">
+  <h2>Invoices</h2>
+  <!-- List all the invoices from the database -->
   <ion-list [inset]="true">
+    <!-- Item of every invoice -->
     <ion-item *ngFor="let invoice of invoices">
       <ion-label>{{ invoice.holder_name }}</ion-label>
-      <ion-button (click)="onGeneratePDF()">
+      <!-- Button that generate a PDF of the invoice -->
+      <ion-button (click)="onGeneratePDF(invoice)">
         <ion-icon name="newspaper"></ion-icon>
-      </ion-button>
-      <ion-button (click)="openInvoiceModal(invoice)">
-        <ion-icon name="person"></ion-icon>
       </ion-button>
     </ion-item>
   </ion-list>

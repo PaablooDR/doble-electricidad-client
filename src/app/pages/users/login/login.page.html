@@ -1,26 +1,23 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Login</ion-title>
-  </ion-toolbar>
-</ion-header>
-
+<!-- Content -->
 <ion-content [fullscreen]="true">
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Login</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <form [formGroup]="formLogin" (ngSubmit)="onSubmit($event)">
-        <ion-item>
-          <ion-input label="Email" labelPlacement="floating" type="email" placeholder="Email" formControlName="email"></ion-input>
-          <!-- <ion-note slot="error">Email is required</ion-note> -->
-        </ion-item>
-        <ion-item>
-          <ion-input label="Password" labelPlacement="floating" type="password" formControlName="password"></ion-input>
-          <!-- <ion-note slot="error">Password's field must be minimum length 5</ion-note> -->
-        </ion-item>
-        <ion-button color="tertiary" type="submit" [disabled]="!formLogin.valid" class="button-form" expand="block">Accept</ion-button>
-      </form>
-    </ion-card-content>
-  </ion-card>
+  <div class="center-item height">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Login</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <form [formGroup]="formLogin" (ngSubmit)="onSubmit($event)">
+          <ion-item>
+            <ion-input label="Email" labelPlacement="floating" type="email" placeholder="Email" formControlName="email"></ion-input>
+            <!-- <ion-note slot="error">Email is required</ion-note> -->
+          </ion-item>
+          <ion-item>
+            <ion-input label="Password" labelPlacement="floating" type="password" formControlName="password"></ion-input>
+            <!-- <ion-note slot="error">Password's field must be minimum length 5</ion-note> -->
+          </ion-item>
+          <ion-button color="tertiary" type="submit" [disabled]="!formLogin.valid" class="button-form" expand="block">Accept</ion-button>
+        </form>
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>

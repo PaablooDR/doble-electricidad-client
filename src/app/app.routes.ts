@@ -20,4 +20,8 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/invoices/list/list.page').then( m => m.ListPage),
     canActivate: [loginGuard]
   },
+  {
+    path: 'profile',
+    loadComponent: () => import('./pages/users/profile/profile.page').then( m => m.ProfilePage)
+  },
 ];
