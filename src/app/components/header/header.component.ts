@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { IonHeader, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon, IonLabel, IonItem,  IonContent, IonPopover } from '@ionic/angular/standalone';
+import { IonHeader, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon, IonContent, IonPopover } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { exit } from 'ionicons/icons';
+import { exit, create } from 'ionicons/icons';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
   standalone: true,
-  imports: [IonHeader, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon, IonLabel, IonItem,  IonContent, IonPopover]
+  imports: [IonHeader, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon, IonContent, IonPopover]
 })
 export class HeaderComponent implements OnInit {
   isPopoverOpen = false;
@@ -17,7 +17,7 @@ export class HeaderComponent implements OnInit {
   pendingAction: (() => void) | null = null;
 
   constructor(private router: Router) {
-    addIcons({ exit });
+    addIcons({ exit, create });
   }
 
   ngOnInit() {}

@@ -1,21 +1,23 @@
 <!-- Content -->
 <ion-content [fullscreen]="true">
-  <div class="center-item height">
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>Login</ion-card-title>
+  <div class="center-item height-100 login-background">
+    <ion-card class="height-50">
+      <!-- Card header -->
+      <ion-card-header class="center-item height-25">
+        <ion-card-title color="primary">Login</ion-card-title>
       </ion-card-header>
-      <ion-card-content>
-        <form [formGroup]="formLogin" (ngSubmit)="onSubmit($event)">
+      <!-- Card content -->
+      <ion-card-content class="height-75">
+        <form [formGroup]="formLogin" (ngSubmit)="onSubmit($event)" class="login-form">
           <ion-item>
-            <ion-input label="Email" labelPlacement="floating" type="email" placeholder="Email" formControlName="email"></ion-input>
+            <ion-input label="Email" type="email" placeholder="For ex. example@email.com" formControlName="email" />
             <!-- <ion-note slot="error">Email is required</ion-note> -->
           </ion-item>
           <ion-item>
-            <ion-input label="Password" labelPlacement="floating" type="password" formControlName="password"></ion-input>
+            <ion-input label="Password" type="password" placeholder="Your password" formControlName="password" />
             <!-- <ion-note slot="error">Password's field must be minimum length 5</ion-note> -->
           </ion-item>
-          <ion-button color="tertiary" type="submit" [disabled]="!formLogin.valid" class="button-form" expand="block">Accept</ion-button>
+          <ion-button color="primary" type="submit" [disabled]="!formLogin.valid" class="button-form" expand="block">Accept</ion-button>
         </form>
       </ion-card-content>
     </ion-card>

@@ -3,7 +3,7 @@
 
 <!-- Content -->
 <ion-content [fullscreen]="true">
-  <h2>Invoices</h2>
+  <ion-title class="title">Invoices</ion-title>
   <!-- List all the invoices from the database -->
   <ion-list [inset]="true">
     <!-- Item of every invoice -->
@@ -11,7 +11,7 @@
       <ion-label>{{ invoice.holder_name }}</ion-label>
       <!-- Button that generate a PDF of the invoice -->
       <ion-button (click)="onGeneratePDF(invoice)">
-        <ion-icon name="newspaper"></ion-icon>
+        <ion-icon name="newspaper" />
       </ion-button>
     </ion-item>
   </ion-list>

@@ -1,9 +1,9 @@
 <!-- Header -->
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <!-- Button to return to the invoices list page -->
     <ion-buttons slot="start">
-      <ion-back-button default-href="/list"></ion-back-button>
+      <ion-back-button default-href="/list" />
     </ion-buttons>
     <ion-title>Profile</ion-title>
   </ion-toolbar>
@@ -14,16 +14,16 @@
   <form [formGroup]="formUser" (ngSubmit)="onSubmit()">
     <!-- Form inputs only enable when the user is editing -->
     <ion-item>
-      <ion-input label="Name" type="text" formControlName="name" [readonly]="!isEditing"></ion-input>
+      <ion-input label="Name" type="text" formControlName="name" [readonly]="!isEditing" />
     </ion-item>
     <ion-item>
-      <ion-input label="Email" type="email" formControlName="email" [readonly]="!isEditing"></ion-input>
+      <ion-input label="Email" type="email" formControlName="email" [readonly]="!isEditing" />
     </ion-item>
     <ion-item>
-      <ion-input label="Address" type="text" formControlName="address" [readonly]="!isEditing"></ion-input>
+      <ion-input label="Address" type="text" formControlName="address" [readonly]="!isEditing" />
     </ion-item>
     <ion-item *ngIf="isEditing">
-      <ion-input label="Password" type="password" formControlName="password"></ion-input>
+      <ion-input label="Password" type="password" formControlName="password" />
     </ion-item>
 
     <!-- Save and Cancel buttons -->
@@ -42,7 +42,7 @@
     <div class="center-item">
       <ion-button *ngIf="!isEditing" color="tertiary" (click)="toggleEdit()">
         Edit
-        <ion-icon slot="end" name="create"></ion-icon>
+        <ion-icon slot="end" name="create" />
       </ion-button>
     </div>
   </form>
