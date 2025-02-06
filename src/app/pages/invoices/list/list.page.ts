@@ -49,7 +49,7 @@ export class ListPage implements OnInit {
     const userEmail = invoice.user.email;
     const userAddress = invoice.user.address;
   
-    await generatePDF(reciboNo, fecha, holderName, amount, address);
+    await generatePDF(reciboNo, fecha, holderName, amount, address, userName, userEmail, userAddress);
   }
 
 }
