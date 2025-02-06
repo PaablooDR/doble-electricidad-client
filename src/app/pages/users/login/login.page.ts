@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { IonContent, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonInput, IonItem, IonButton,} from '@ionic/angular/standalone';
+import { IonContent, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonInput, IonItem, IonButton} from '@ionic/angular/standalone';
 import { UserService } from 'src/app/services/users/user.service';
 import { TranslateService, TranslateModule  } from '@ngx-translate/core';
 

@@ -11,11 +11,9 @@
         <form class="login-form" [formGroup]="formLogin" (ngSubmit)="onSubmit($event)">
           <ion-item>
             <ion-input [label]="'LOGIN.EMAIL' | translate" type="email" [placeholder]="'LOGIN.EMAIL-LABEL' | translate" formControlName="email" />
-            <!-- <ion-note slot="error">Email is required</ion-note> -->
           </ion-item>
           <ion-item>
             <ion-input [label]="'LOGIN.PASSWORD' | translate" type="password" [placeholder]="'LOGIN.PASSWORD-LABEL' | translate" formControlName="password" />
-            <!-- <ion-note slot="error">Password's field must be minimum length 5</ion-note> -->
           </ion-item>
           <ion-button color="primary" type="submit" [disabled]="!formLogin.valid" class="button-form" expand="block">{{ 'LOGIN.ACCEPT' | translate }}</ion-button>
         </form>

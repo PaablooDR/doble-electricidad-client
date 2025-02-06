@@ -12,7 +12,7 @@
     },
     "PROFILE": {
         "TITLE": "Profile",
-        "NAME": "Email",
+        "NAME": "Name",
         "ADDRESS": "Address",
         "EDIT": "Edit",
         "NEWPASSWORD": "New password",
