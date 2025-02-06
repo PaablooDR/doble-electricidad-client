@@ -9,6 +9,7 @@ export class InvoiceService {
   private baseUrl = 'http://localhost:3333/invoices';
   constructor(private http: HttpClient) { }
 
+  // Request to get an array of all the invoices
   getAllInvoices(): Observable<any[]> {
     return this.http.get<any[]>(`${this.baseUrl}`);
   }

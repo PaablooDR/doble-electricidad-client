@@ -40,22 +40,27 @@
 * {
     font-family: $font-family;
 }
+
+// Class to center a item
 .center-item {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+// Background color of the login
 .login-background {
     background-color: #F3F5F9;
 }
 
+// Gap between login items
 .login-form {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 40px;
 }
 
+// Height and width classes
 .height-100 {
     height: 100%;
 }
@@ -76,20 +81,29 @@
     width: 75%;
 }
 
+// Background color of the header
 .header {
     background-color: #3052A1;
 }
 
+// Titles styles
 .title {
     text-align: center;
     margin-top: 3%;
     font-size: x-large;
 }
 
+// Margin horizontal of the list
 .margin-list {
     margin: 0% 5%;
 }
 
+// Ion popover width
 ion-popover {
     --width: 200px;
+}
+
+// Fix ion-title on ios with a toolbar(list page)
+ion-toolbar {
+    --background: #fff;
 }

@@ -1,6 +1,7 @@
 import { inject } from "@angular/core";
 import { Router } from "@angular/router";
 
+// Check if user is logged
 export const loginGuard = () => {
     const router = inject(Router);
 
@@ -11,3 +12,14 @@ export const loginGuard = () => {
         return false;
     }
 }
+
+// Check if user is not logged
+export const authGuard = () => {
+    const router = inject(Router);
+
+    if (localStorage.getItem('token_doble_electricidad')) {
+        router.navigate(['/list']);
+        return false;
+    }
+    return true;
+};

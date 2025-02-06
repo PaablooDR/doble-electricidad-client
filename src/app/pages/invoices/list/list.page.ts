@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonItem, IonLabel, IonList, IonButton, IonIcon, IonTitle } from '@ionic/angular/standalone';
+import { IonContent, IonItem, IonLabel, IonList, IonButton, IonIcon, IonTitle, IonHeader, IonToolbar } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { newspaper, person } from 'ionicons/icons';
 import { InvoiceService } from 'src/app/services/invoices/invoice.service';
@@ -14,7 +14,7 @@ import { TranslateService, TranslateModule  } from '@ngx-translate/core';
   templateUrl: './list.page.html',
   styleUrls: ['./list.page.scss'],
   standalone: true,
-  imports: [IonContent, IonItem, IonLabel, IonList, IonButton, IonIcon, IonTitle, CommonModule, FormsModule, HeaderComponent, TranslateModule]
+  imports: [IonContent, IonItem, IonLabel, IonList, IonButton, IonIcon, IonTitle, IonHeader, IonToolbar, CommonModule, FormsModule, HeaderComponent, TranslateModule]
 })
 export class ListPage implements OnInit {
 
@@ -28,6 +28,7 @@ export class ListPage implements OnInit {
     this.loadInvoices();
   }
 
+  // Function that receives an array of invoices
   loadInvoices() {
     this.invoiceService.getAllInvoices().subscribe({
       next: (data) => {

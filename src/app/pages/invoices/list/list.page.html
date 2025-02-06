@@ -2,8 +2,12 @@
 <app-header></app-header>
 
 <!-- Content -->
-<ion-content [fullscreen]="true">
+<!-- Title -->
+<ion-toolbar>
   <ion-title class="title">{{ 'LIST.TITLE' | translate }}</ion-title>
+</ion-toolbar>
+
+<ion-content [fullscreen]="true">
   <!-- List all the invoices from the database -->
   <ion-list [inset]="true">
     <!-- Item of every invoice -->
